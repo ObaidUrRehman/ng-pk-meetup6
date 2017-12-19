@@ -1,18 +1,17 @@
 <mat-toolbar color="primary">
-  Optimize Loops
+  Optimize Change Detection
 </mat-toolbar>
 
-<!-- <app-list-component [attendees]="attendees"></app-list-component> -->
+
 
 <div class="basic-container">
-  <mat-list dense>
-    <mat-list-item *ngFor="let item of attendees;"> {{item.name}}  </mat-list-item>
-    <!-- <mat-list-item *ngFor="let item of attendees;trackBy:trackByFn"> {{item.name}}  </mat-list-item> -->
-   </mat-list>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Add City" [(ngModel)]="city" (keydown)="addCity($event)">
+  </mat-form-field>
+
+  <app-list-component [cities]="cities"></app-list-component>
+
 </div>
 
-
-<button mat-raised-button color="primary" (click)="onRefreshItem()">Refresh</button> 
-
-
-
+<!-- <button mat-raised-button color="primary" (click)="onRefreshItem()">Refresh</button> -->

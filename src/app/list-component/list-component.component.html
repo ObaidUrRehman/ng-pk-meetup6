@@ -1,5 +1,6 @@
-<select>
-  <option *ngFor="let item of attendees;trackBy:item?.id" [value]="item.id">
-    {{item.name}}
-  </option>
-</select>
+<mat-list dense>
+    <mat-list-item *ngFor="let c of cities;">
+        <h3 matLine> {{c.name}} </h3>
+        <h4 matLine> {{getWeather()}} </h4>
+    </mat-list-item>
+  </mat-list>

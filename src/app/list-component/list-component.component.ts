@@ -8,11 +8,23 @@ import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core
 })
 export class ListComponentComponent implements OnInit {
 
-  @Input() attendees;
+  @Input() cities;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  getWeather() {
+    console.log('%c getWeather()', 'color:red');
+    // simulate a delay in getting weather. Just for demostration purpose.
+    const start = new Date().getTime();
+    for (let i = 0; i < 1e7; i++) {
+      if ((new Date().getTime() - start) > 10) {
+        break;
+      }
+    }
+    return 25;
   }
 
 }

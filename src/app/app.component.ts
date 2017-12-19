@@ -1,5 +1,8 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { Attendee } from './attendee';
+import { City } from './city';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/of';
+import 'rxjs/add/operator/delay';
 
 @Component({
   selector: 'app-root',
@@ -8,34 +11,19 @@ import { Attendee } from './attendee';
 })
 export class AppComponent {
   title = 'app';
-  attendees = [
-    new Attendee(9, 'Umair'),
-    new Attendee(2, 'Anas'),
-    new Attendee(3, 'Ahsan'),
-    new Attendee(4, 'Mashood'),
-    new Attendee(5, 'Kamran')
-  ];
 
-  constructor() {
+  cities = [new City('Karachi'), new City('Lahore'), new City('Islamabad')];
+  city: string;
+
+  addCity(event: any) {
+    if (event.key === 'Enter' && this.city !== undefined) {
+      this.cities.push(new City(this.city));
+      // this.cities = this.stupidClone(this.cities);
+      this.city = '';
+    }
   }
 
-  onRefreshItem() {
-    this.attendees = this.getItems();
+  stupidClone (src) {
+    return JSON.parse(JSON.stringify(src));
   }
-
-  getItems() {
-    return [
-      new Attendee(9, 'Umair'),
-      new Attendee(2, 'Anas'),
-      new Attendee(3, 'Ahsan'),
-      new Attendee(4, 'Mashood'),
-      new Attendee(5, 'Kamran'),
-      new Attendee(99, 'Obaid')
-    ];
-  }
-
-  trackByFn(index, item: Attendee) {
-    return item.id;
-  }
-
 }
