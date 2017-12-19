@@ -4,7 +4,7 @@ import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core
   selector: 'app-list-component',
   templateUrl: './list-component.component.html',
   styleUrls: ['./list-component.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.Default
 })
 export class ListComponentComponent implements OnInit {
 
