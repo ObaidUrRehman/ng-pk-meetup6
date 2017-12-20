@@ -5,13 +5,10 @@
 
 
 <div class="basic-container">
-
   <mat-form-field class="example-full-width">
     <input matInput placeholder="Add City" [(ngModel)]="city" (keydown)="addCity($event)">
   </mat-form-field>
-
+  
   <app-list-component [cities]="cities"></app-list-component>
 
 </div>
-
-<!-- <button mat-raised-button color="primary" (click)="onRefreshItem()">Refresh</button> -->
