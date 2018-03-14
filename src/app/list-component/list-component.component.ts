@@ -15,8 +15,8 @@ export class ListComponentComponent implements OnInit {
   ngOnInit() {
   }
 
-  getWeather() {
-    // console.log('%c getWeather()', 'color:red');
+  getWeather(city: string) {
+    console.log('%c getWeather()', 'color:red');
     // simulate a delay in getting weather. Just for demostration purpose.
     const start = new Date().getTime();
     for (let i = 0; i < 1e7; i++) {
